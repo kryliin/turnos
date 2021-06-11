@@ -1,0 +1,53 @@
+<h1 mat-dialog-title> Datos del Espacio </h1>
+<div mat-dialog-content>
+
+  <mat-form-field>
+    <input matInput tabindex="1" [(ngModel)]="data.nombre" placeholder="Nombre">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input readonly matInput name="fechaInicio" [(ngModel)]="data.fechaInicio" [matDatepicker]="picker1"
+      placeholder="Fecha de inicio">
+    <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+    <mat-datepicker #picker1></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input readonly matInput name="fechaFin" [(ngModel)]="data.fechaFin" [matDatepicker]="picker2"
+      placeholder="Fecha de fin">
+    <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+    <mat-datepicker #picker2></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput tabindex="1" [(ngModel)]="data.logo" placeholder="Logo">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput tabindex="1" [(ngModel)]="data.direccion" placeholder="Dirección">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput tabindex="1" [(ngModel)]="data.telefono" placeholder="Telefono">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-select [(ngModel)]="data.localidad" name="localidad" placeholder="<< Localidades >>">
+      <mat-option tabindex="1" *ngFor="let localidad of localidades" [value]="localidad">
+        {{localidad.nombre}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-select [(ngModel)]="data.tipo" name="tipo" placeholder="<< Tipo de Espacio >>">
+      <mat-option tabindex="1" *ngFor="let tipo of tipos" [value]="tipo">
+        {{tipo.nombre}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <div mat-dialog-actions>
+    <button mat-raised-button color="primary" (click)="save(data)" tabindex="10">Guardar</button>
+    <button mat-raised-button color="basic" (click)="onNoClick()" tabindex="11">Cancelar</button>
+  </div>

@@ -1,0 +1,6 @@
+FROM node:latest
+
+WORKDIR /usr/app
+COPY . .
+RUN chmod 777 ./entry.sh
+ENTRYPOINT ["sh", "entry.sh"]

@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "pdf417-barcode": "^0.4.1"
+  }
+}

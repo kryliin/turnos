@@ -1,0 +1,19 @@
+version: '2.2'
+services:
+  app:
+    build: .    
+    container_name: app
+    ports:      
+      - 9999:3000
+    tty: true
+    stdin_open: true    
+    networks:
+      - node_mysql
+
+networks:
+  node_mysql:
+    external: true
+    
+  default:
+    external:
+      name: node_mysql

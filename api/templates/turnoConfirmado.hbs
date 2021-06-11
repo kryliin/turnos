@@ -1,0 +1,18 @@
+<div style="max-width:800px; font-size:16px">
+    <h2>Reserva de playas - Concepción del uruguay</h2>
+    <p>Recibimos una reserva de playa indicando este email: <b>{{email}}</b></p>
+    <p style="font-size:20px">Código de tu turno: <b>{{codigo}}</b></p>
+    <p>Fecha: <b>{{fecha}}</b></p>
+    <p>Playa: <b>{{nombrePlaya}}</b></p>
+    <p>Participantes:</p>
+    <ul>
+        {{#each participantes}}
+        <li>DNI:<b>{{this.dni}}</b>   Sexo:<b>{{this.sexo}}</b> <b>{{this.responsable}}</b></li>
+        {{/each}}
+    </ul>
+
+    <p>
+        Recordá que podés podés cancelar tu turno accediendo al <a href="http://turnos.cdeluruguay.gob.ar/">portal de turnos</a> tocando el link de "Quiero cancelar mi turno".<br>
+        Necesitarás el código del turno y el DNI del responsable
+    </p>
+</div>

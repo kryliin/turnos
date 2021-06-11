@@ -1,0 +1,82 @@
+/* You can add global styles to this file, and also import other style files */
+/* Structure */
+table {
+    width: 100%;
+}
+
+.mat-row:hover {
+    cursor: pointer;
+    background-color: #c0c0c0;
+}
+
+[mat-row].remove-background {
+    background: none;
+}
+
+.card-general {
+    text-align: center;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin: 0 0px 0px 0px;
+    background-color: #195473;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    border-radius: 0px;
+    box-shadow: 0 0 0px #DDD;
+}
+
+.card-table {
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin: auto;
+}
+
+.btn-generar {
+    background-color: #195473;
+    text-align: center;
+    width: 250px;
+    height: 45px;
+    color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 3px 7px rgba(0, 0, 0, .2);
+    padding: 10px 50px;
+}
+
+.btn-buscar {
+    background-color: #C0C0C0;
+    text-align: center;
+    margin: 0 10px 10px 10px;
+    width: 250px;
+    height: 45px;
+    color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 3px 7px rgba(0, 0, 0, .2);
+    padding: 10px 50px;
+}
+
+.titulo {
+    font-size: 20px;
+    font-weight: 600;
+    font-style: italic;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    padding: 20px 20px 0;
+    margin-bottom: 30px;
+}
+
+.subtitulo {
+    color: #195473;
+    font-style: italic;
+    font-size: 18px;
+    margin: 0 30px 30px 30px;
+}
+
+.resumen {
+    color: #333;
+    font-style: italic;
+    font-size: 15px;
+    margin: 0 10px 10px 10px;
+}

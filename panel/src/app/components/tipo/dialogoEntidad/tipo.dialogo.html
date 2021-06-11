@@ -1,0 +1,11 @@
+<h1 mat-dialog-title> Datos del Tipo de Espacio </h1>
+<div mat-dialog-content>
+
+  <mat-form-field>
+    <input matInput tabindex="1" [(ngModel)]="data.nombre" placeholder="Nombre">
+  </mat-form-field>
+
+  <div mat-dialog-actions>
+    <button mat-raised-button color="primary" (click)="save(data)" tabindex="10">Guardar</button>
+    <button mat-raised-button color="basic" (click)="onNoClick()" tabindex="11">Cancelar</button>
+  </div>

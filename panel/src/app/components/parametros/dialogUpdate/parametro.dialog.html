@@ -1,0 +1,14 @@
+<h1 mat-dialog-title>Datos del Parametro</h1>
+<div mat-dialog-content>
+  <p></p>
+
+  <mat-form-field>
+    <input matInput tabindex="1" type="number" [(ngModel)]="data.value" placeholder="Valor">
+  </mat-form-field>
+
+</div>
+
+<div mat-dialog-actions>
+  <button mat-raised-button color="primary" [mat-dialog-close]="data" tabindex="2">Guardar</button>
+  <button mat-raised-button color="basic" (click)="onNoClick()" tabindex="-1">Cancelar</button>
+</div>

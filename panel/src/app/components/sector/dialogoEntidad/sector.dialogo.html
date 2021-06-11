@@ -1,0 +1,49 @@
+<h1 mat-dialog-title> Datos el Sector </h1>
+<div mat-dialog-content>
+
+  <mat-form-field>
+    <mat-select [(ngModel)]="data.espacio" name="espacio" placeholder="<< Espacio del Sector >>">
+      <mat-option tabindex="1" *ngFor="let espacio of espacios" [value]="espacio">
+        {{espacio.nombre}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput tabindex="1" [(ngModel)]="data.nombre" placeholder="Nombre">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input readonly matInput name="fechaInicio" [(ngModel)]="data.fechaInicio" [matDatepicker]="picker1"
+      placeholder="Fecha de inicio">
+    <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+    <mat-datepicker #picker1></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input readonly matInput name="fechaFin" [(ngModel)]="data.fechaFin" [matDatepicker]="picker2"
+      placeholder="Fecha de fin">
+    <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+    <mat-datepicker #picker2></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput tabindex="1" [(ngModel)]="data.logo" placeholder="Logo">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput type='number' tabindex="1" [(ngModel)]="data.cupoMaximo" placeholder="Cupo Maximo">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-select [(ngModel)]="data.turno" name="turno" placeholder="<< Turnos para el Espacio >>">
+      <mat-option tabindex="1" *ngFor="let turno of turnos" [value]="turno">
+        {{turno.nombre}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <div mat-dialog-actions>
+    <button mat-raised-button color="primary" (click)="save(data)" tabindex="10">Guardar</button>
+    <button mat-raised-button color="basic" (click)="onNoClick()" tabindex="11">Cancelar</button>
+  </div>

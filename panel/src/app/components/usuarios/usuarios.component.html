@@ -1,0 +1,89 @@
+<mat-card class="card-general">
+  <mat-card-content>
+    <mat-card-title class="titulo"> Administración de Usuarios </mat-card-title>
+    <button mat-raised-button (click)="cambiarClave()">
+      <mat-icon>search</mat-icon> Cambiar Clave
+    </button>
+    <button mat-raised-button (click)="dialogoAgregar()">
+      <mat-icon>add_box</mat-icon> Nuevo Usuario
+    </button>
+    <!--
+    <div class="container">
+
+        <div fxFlex.gt-sm="50%" fyFlex.gt-sm="50%" >
+            <mat-form-field >
+                <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+            </mat-form-field>
+        </div>
+    </div>
+    -->
+
+  </mat-card-content>
+</mat-card>
+
+<div *ngIf="usuariosSource?.length == 0" class="alert alert-info">
+  No hay registros en la base de datos.
+</div>
+
+
+<mat-card class="card-table">
+  <div class="mat-elevation-z8">
+    <div class="table-container">
+      <table mat-table [dataSource]="usuariosSource" class="mat-elevation-z8" style="width: 100%;"
+        *ngIf="usuariosSource?.length>0">
+
+        <ng-container matColumnDef="Usuario">
+          <mat-header-cell *matHeaderCellDef> Usuario </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{ element.user }} </mat-cell>
+        </ng-container>
+
+
+        <ng-container matColumnDef="Apellido y Nombre">
+          <mat-header-cell *matHeaderCellDef> Apellido y Nombre </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{ element.apellido }} {{ element.nombre }} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="Correo">
+          <mat-header-cell *matHeaderCellDef> Correo </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{ element.email }} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="Roles">
+          <mat-header-cell *matHeaderCellDef> Roles </mat-header-cell>
+          <mat-cell *matCellDef="let element">
+
+            <table>
+              <tr *ngFor="let item of element.roles;">
+                <td>{{item.nombre}}</td>
+              </tr>
+            </table>
+
+          </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="Acciones">
+          <mat-header-cell *matHeaderCellDef>Acciones</mat-header-cell>
+          <mat-cell *matCellDef="let element">
+
+            <button mat-raised-button (click)="editDialog(element)" style="float: left;">
+              <mat-icon>edit_box</mat-icon>
+            </button>
+
+            <button mat-raised-button color="warn" (click)="deleteDialog(element)" style="float: left;">
+              <mat-icon>delete_box</mat-icon>
+            </button>
+
+          </mat-cell>
+        </ng-container>
+
+
+        <mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"> </mat-header-row>
+        <mat-row class="remove-background" (mouseover)="onMouseOver(e)"
+          *matRowDef="let row let e = index; columns: displayedColumns;"
+          [ngClass]="{'mat-elevation-z8' : e == mouseOverIndex}"></mat-row>
+      </table>
+
+    </div>
+  </div>
+
+</mat-card>

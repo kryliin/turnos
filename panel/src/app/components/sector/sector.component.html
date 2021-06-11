@@ -1,0 +1,87 @@
+<mat-card class="card-general">
+    <mat-card-content>
+        <mat-card-title class="titulo"> Administración de Sectores por Espacio </mat-card-title>
+        <button mat-raised-button (click)="dialogoAgregar()">
+            <mat-icon>add_box</mat-icon> Nuevo Sector
+        </button>
+        <!--
+        <div class="container">
+
+            <div fxFlex.gt-sm="50%" fyFlex.gt-sm="50%" >
+                <mat-form-field >
+                    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+                </mat-form-field>
+            </div>
+        </div>
+        -->
+    </mat-card-content>
+</mat-card>
+
+
+
+<mat-card class="card-table">
+    <div class="mat-elevation-z8">
+        <div class="table-container">
+            <table mat-table [dataSource]="dataSource" style="width: 100%;">
+
+                <ng-container matColumnDef="ID">
+                    <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.id}} </mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="Espacio">
+                    <mat-header-cell *matHeaderCellDef> Espacio </mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.espacio.nombre}} </mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="Nombre">
+                    <mat-header-cell *matHeaderCellDef> Nombre </mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.nombre}} </mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="Cupo Maximo">
+                    <mat-header-cell *matHeaderCellDef> Cupo Maximo </mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.cupoMaximo}} </mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="Turno">
+                    <mat-header-cell *matHeaderCellDef> Turno </mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.turno.nombre}} </mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="Fecha Inicio">
+                    <mat-header-cell *matHeaderCellDef> Fecha Inicio </mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.fechaInicio | date:'mediumDate'}} </mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="Fecha Fin">
+                    <mat-header-cell *matHeaderCellDef> Fecha Fin </mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.fechaFin | date:'mediumDate'}} </mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="Acciones">
+                    <mat-header-cell *matHeaderCellDef>Acciones</mat-header-cell>
+                    <mat-cell *matCellDef="let element">
+
+                        <button mat-raised-button color="success" (click)="dialgoEditar(element)" style="float: left;">
+                            <mat-icon>edit_box</mat-icon>
+                        </button>
+
+                        <button mat-raised-button color="warn" (click)="dialogoEliminar(element)" style="float: left;">
+                            <mat-icon>delete_box</mat-icon>
+                        </button>
+
+                    </mat-cell>
+                </ng-container>
+
+                <mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"> </mat-header-row>
+                <mat-row class="remove-background" (mouseover)="onMouseOver(e)"
+                    *matRowDef="let row let e = index; columns: displayedColumns;"
+                    [ngClass]="{'mat-elevation-z8' : e == mouseOverIndex}"></mat-row>
+            </table>
+        </div>
+        <mat-paginator [length]="resultsLength" [pageSize]="100" style="width: 100%;">
+        </mat-paginator>
+    </div>
+
+</mat-card>

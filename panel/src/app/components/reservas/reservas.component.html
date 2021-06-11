@@ -1,0 +1,77 @@
+<mat-card class="card-general">
+    <mat-card-content>
+        <mat-card-title class="titulo"> Administración de Reservas </mat-card-title>
+        <!--
+        <button mat-raised-button (click)="dialogoAgregar()">
+            <mat-icon>add_box</mat-icon> Nuevo Sector
+        </button>
+        <div class="container">
+
+            <div fxFlex.gt-sm="50%" fyFlex.gt-sm="50%" >
+                <mat-form-field >
+                    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+                </mat-form-field>
+            </div>
+        </div>
+        -->
+    </mat-card-content>
+</mat-card>
+
+
+
+<mat-card class="card-table">
+    <div class="mat-elevation-z8">
+        <div class="table-container">
+            <table mat-table [dataSource]="dataSource" style="width: 100%;">
+
+                <ng-container matColumnDef="ID">
+                    <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.id}} </mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="Codigo Reserva">
+                    <mat-header-cell *matHeaderCellDef> Codigo Reserva </mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.codigoReserva}} </mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="Fecha Reserva">
+                    <mat-header-cell *matHeaderCellDef> Fecha Reserva </mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.fechaReserva}} </mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="Fecha Ingreso">
+                    <mat-header-cell *matHeaderCellDef> Fecha Ingreso </mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.fechaIngreso}} </mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="Fecha Baja">
+                    <mat-header-cell *matHeaderCellDef> Fecha Baja </mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.fechaBaja}} </mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="DNI">
+                    <mat-header-cell *matHeaderCellDef> DNI </mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.persona.numeroDocumento}} </mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="Espacio">
+                    <mat-header-cell *matHeaderCellDef> Espacio </mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.sector.espacio.nombre}} </mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="Sector">
+                    <mat-header-cell *matHeaderCellDef> Sector </mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.sector.nombre}} </mat-cell>
+                </ng-container>
+
+                <mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"> </mat-header-row>
+                <mat-row class="remove-background" (mouseover)="onMouseOver(e)"
+                    *matRowDef="let row let e = index; columns: displayedColumns;"
+                    [ngClass]="{'mat-elevation-z8' : e == mouseOverIndex}"></mat-row>
+            </table>
+        </div>
+        <mat-paginator [length]="resultsLength" [pageSize]="100" style="width: 100%;">
+        </mat-paginator>
+    </div>
+
+</mat-card>

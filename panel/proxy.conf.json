@@ -1,0 +1,10 @@
+{
+  "/meets/*": {
+    "target": "http://servicios.cdeluruguay.gob.ar:3000/meets/",
+    "secure": false,
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/meets": ""
+    }
+  }
+}

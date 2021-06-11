@@ -1,0 +1,37 @@
+<!-- ============================================================== -->
+<!-- Profile - style you can find in header.scss -->
+<!-- ============================================================== -->
+
+
+<a class=" m-r-20 hidden-sm-up" mat-raised-button color="mat-grey">
+  <button [matMenuTriggerFor]="profile" mat-icon-button class="m-r-20">
+    <b> {{ authService.usuario.user }} </b>
+  </button>
+</a>
+
+
+
+
+<!--
+<img src="assets/images/users/1.jpg" alt="user"  class="profile-pic"> 
+-->
+
+
+
+<mat-menu #profile="matMenu" class="mymegamenu">
+
+  <!--
+  <button mat-menu-item (click)="configuracion()">
+    <mat-icon>settings_applications</mat-icon> Configuración
+  </button>
+  <button mat-menu-item (click)="cambiarClave()">
+    <mat-icon>supervised_user_circle</mat-icon> Cambiar clave
+  </button>
+-->
+
+
+  <button mat-menu-item (click)="logout()">
+    <mat-icon>exit_to_app</mat-icon> Cerrar sesión
+  </button>
+
+</mat-menu>
