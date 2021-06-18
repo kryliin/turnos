@@ -1,6 +1,6 @@
 import { Controller, Get, Param, UseGuards } from '@nestjs/common';
 import { ApiResponse } from '@nestjs/swagger';
-import { AlumnosUtn } from '../../../panel/src/app/models/alumnosutn';
+import { AlumnosUtn } from 'src/components/entities/alumnosutn';
 import { AbstractController } from './abstract.controller';
 import { AlumnosUtnService } from 'src/components/services/alumnosutn.service';
 
